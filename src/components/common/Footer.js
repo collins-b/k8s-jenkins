@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const style ={
-  position: 'absolute',
   right: 0,
   bottom: 0,
   left: 0,
