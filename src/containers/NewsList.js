@@ -3,14 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchNews } from '../actions/News';
 import NewsLists from '../components/news/NewsDisplay';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
-import TextField from'material-ui/TextField';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
 export class NewsList extends Component {
   constructor(props) {
     super(props);
@@ -23,9 +15,6 @@ export class NewsList extends Component {
   }
 
   componentDidMount() {
-    // let { dispatch } = this.props
-    // this.props.fetchNews();
-    // dispatch(fetchNews)
     this.props.fetchNews();
   }
   renderArticles() {
@@ -42,11 +31,9 @@ export class NewsList extends Component {
   }
 
   render() {
-    console.log(this.props.fetchNews(),'jhhfrtdr')
     const dispatch  = this.props
     return (
       <ul className="list-group" >
-      <p style={{marginLeft: 99}}>jfjhjh gjhjgh hjghj</p>
         {this.renderArticles()}
       </ul>
     );
