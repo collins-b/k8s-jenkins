@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0 --port process.env.PORT || 5000 --inline --hot "
+    "start": "webpack-dev-server --host 0.0.0.0 --port process.env.PORT || 80 --inline --hot "
   },
   "author": "",
   "license": "ISC",
