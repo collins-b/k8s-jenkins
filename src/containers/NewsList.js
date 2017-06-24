@@ -22,7 +22,10 @@ export class NewsList extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    // let { dispatch } = this.props
+    // this.props.fetchNews();
+    // dispatch(fetchNews)
     this.props.fetchNews();
   }
   renderArticles() {
@@ -33,16 +36,17 @@ export class NewsList extends Component {
     }
     return this.props.news.map((article) => {
       return (
-        <NewsList key={article.status} article={article} />
+        <NewsLists key={article.status} article={article} />
       );
     });
   }
 
   render() {
-    console.log(this.props.news, 'NEWS')
+    console.log(this.props.fetchNews(),'jhhfrtdr')
     const dispatch  = this.props
     return (
-      <ul className="list-group">
+      <ul className="list-group" >
+      <p style={{marginLeft: 99}}>jfjhjh gjhjgh hjghj</p>
         {this.renderArticles()}
       </ul>
     );
@@ -62,6 +66,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, {
-  fetchNews,
+  fetchNews
 })(NewsList);
         
