@@ -12,6 +12,7 @@ import Gravatar from 'react-gravatar';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Toggle from 'material-ui/Toggle';
 import { connect } from 'react-redux';
+import { Link, IndexLink } from 'react-router';
 
 String.prototype.capitalize = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
@@ -34,7 +35,9 @@ constructor(props) {
       source: this.props.article.source,
       sortBy: this.props.article.sortBy,
       articles: this.props.article.articles,
-      expanded: false,
+      title: this.props.article.title,
+      description: this.props.article.description,
+      url: this.props.article.url
     }
     };
   }
@@ -83,15 +86,16 @@ constructor(props) {
  * @returns {component} component
  */
   render() {
+    console.log(this.props, 'component')
     
     return(
       <MuiThemeProvider>
-      <div className="row" style={{ marginLeft: 250,marginTop:5 }}>
+      <div className="row" style={{ marginLeft: 250,marginTop:15 }}>
       <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange} style={{marginTop:80}}>
       <Gravatar email={this.props.article.author} style={{ float: 'left' }} size={50} rating="pg" default="identicon" className="CustomAvatar-image" />
         <CardHeader
-          title=""
-          subtitle={this.state.article.author }
+          title={this.state.article.author}
+          subtitle={this.state.article.title }
           actAsExpander={true}
           showExpandableButton={true}
         />
@@ -100,7 +104,7 @@ constructor(props) {
             toggled={this.state.expanded}
             onToggle={this.handleToggle}
             labelPosition="right"
-            label={this.state.article.source}
+            label=''
           />
         </CardText>
         <CardMedia
@@ -109,13 +113,9 @@ constructor(props) {
         </CardMedia>
         <CardTitle title={this.state.article.sortBy}  expandable={true} />
         <CardText expandable={true}>
-          {this.state.article.articles}
-          <br />
-          <FlatButton label="Read Less" onTouchTap={this.handleReduce} />
+          {this.state.article.description}
+          <Link to={this.state.article.url}>Read More</Link>
         </CardText>
-        <CardActions>
-          <FlatButton label="Read More" onTouchTap={this.handleExpand} />
-        </CardActions>
       </Card>
       </div>
       </MuiThemeProvider>
