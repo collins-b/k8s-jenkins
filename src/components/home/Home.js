@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import { connect } from 'react-redux';
+import NewsList from '../../containers/NewsList';
 
 /**
  * HomePage Component
@@ -8,7 +9,7 @@ import { Link } from 'react-router';
 class HomePage extends React.Component {
 
   render() {
-    console.log(this.state)
+    console.log(this.props, 'props')
     const hidden = {
       display: 'none'
     };
@@ -115,6 +116,7 @@ class HomePage extends React.Component {
         </main>
         <div className="col-md-12">
           <p style={hidden}>
+          <NewsList />
           </p>
         </div>
       </div>
@@ -122,18 +124,17 @@ class HomePage extends React.Component {
   }
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     news: state.news,
-//   };
-// }
+function mapStateToProps(state) {
+  return {
+    news: state.news,
+  };
+}
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({
-//     documents,
-//     users
-//   }, dispatch);
-// }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    news,
+  }, dispatch);
+}
 
-//module.exports = connect(mapStateToProps)(HomePage);
-module.exports = HomePage;
+module.exports = connect(mapStateToProps)(HomePage);
+// module.exports = HomePage;
