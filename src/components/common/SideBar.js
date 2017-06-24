@@ -42,7 +42,7 @@ class SideBar extends Component{
           </div>
         </header>
         <nav className="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <Link to="/home" className="mdl-navigation__link"><i className="fa fa-home fa-1x" />&nbsp; Home</Link>
+          <Link to="/news" className="mdl-navigation__link"><i className="fa fa-home fa-1x" />&nbsp; Home</Link>
         </nav>
       </div>
     </div>
