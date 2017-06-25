@@ -3,6 +3,9 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import NewsList from '../../containers/NewsList';
 import SourceList from '../../containers/SourcesList';
+import TechList from '../../containers/TechList';
+import Paper from 'material-ui/Paper';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 /**
  * HomePage Component
@@ -17,14 +20,22 @@ class HomePage extends React.Component {
     }
     };
   }
-
+  
   render() {
-    console.log(this.props.sources, 'propshome')
+    const style = {
+  height: 100,
+  width: 100,
+  margin: 20,
+  textAlign: 'center',
+  display: 'inline-block',
+};
+    console.log(this.props, 'propsho')
     const hidden = {
       display: 'none'
     };
 
     return (
+      <MuiThemeProvider>
       <div>
         <main className="mdl-layout__content mdl-color--grey-100" style={{ marginLeft: 235, marginTop: 50 }}>
           <div className="mdl-grid demo-content">
@@ -82,12 +93,12 @@ class HomePage extends React.Component {
                           <i className="fa fa-desktop fa-5x" />
                         </div>
                         <div className="col-xs-9 text-right">
-                          <div className="huge"></div>
-                          <div>Technology</div>
+                          <div className="huge">{this.props.tech.length}</div>
+                          <div>Technology Articles</div>
                         </div>
                       </div>
                     </div>
-                    <Link to="/">
+                    <Link to="/tech">
                       <div className="panel-footer">
                         <span className="pull-left">View Details</span>
                         <span className="pull-right"><i className="fa fa-arrow-circle-right" /></span>
@@ -128,9 +139,11 @@ class HomePage extends React.Component {
           <div style={hidden}>
           <NewsList />
           <SourceList />
+          <TechList />
           </div>
         </div>
       </div>
+      </MuiThemeProvider>
     );
   }
 }
@@ -138,16 +151,17 @@ class HomePage extends React.Component {
 function mapStateToProps(state) {
   return {
     news: state.news,
-    sources: state.sources
+    sources: state.sources,
+    tech: state.tech
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     news,
-    sources
+    sources,
+    tech
   }, dispatch);
 }
 
 module.exports = connect(mapStateToProps)(HomePage);
-// module.exports = HomePage;
