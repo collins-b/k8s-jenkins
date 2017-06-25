@@ -85,9 +85,7 @@ constructor(props) {
  *
  * @returns {component} component
  */
-  render() {
-    console.log(this.props.article, 'newscomponent')
-    
+  render() {    
     return(
       <MuiThemeProvider>
       <div className="row" style={{ marginLeft: 250,marginTop:15 }}>
@@ -114,7 +112,7 @@ constructor(props) {
         <CardTitle title={this.state.article.sortBy}  expandable={true} />
         <CardText expandable={true}>
           {this.state.article.description}
-          <Link to={this.state.article.url}>Read More</Link>
+          <a href={this.props.article.url}>Read More</a>
         </CardText>
       </Card>
       </div>
