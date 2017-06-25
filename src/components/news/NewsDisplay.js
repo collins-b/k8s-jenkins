@@ -86,7 +86,7 @@ constructor(props) {
  * @returns {component} component
  */
   render() {
-    console.log(this.props, 'component')
+    console.log(this.props.article, 'newscomponent')
     
     return(
       <MuiThemeProvider>

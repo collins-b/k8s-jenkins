@@ -31,6 +31,7 @@ export class NewsList extends Component {
   }
 
   render() {
+    console.log(this.props.news, 'nihh');
     const dispatch  = this.props
     return (
       <ul className="list-group" >

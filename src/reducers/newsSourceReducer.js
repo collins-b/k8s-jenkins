@@ -7,7 +7,7 @@ const INITIAL_STATE = [];
 export default function(state = INITIAL_STATE, action) {
 	switch(action.type) {
 	case FETCH_SOURCES:
-	   return action.payload.data;
+	   return action.payload.data.sources;
 	default:
 	   return state;
 	}
