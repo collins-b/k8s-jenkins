@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server ",
     "server": "webpack-dev-server --inline --hot "
   },
   "author": "",
@@ -20,7 +20,7 @@
     "css-loader": "^0.23.1",
     "dialog-polyfill": "^0.4.7",
     "expect": "^1.20.2",
-    "extract-text-webpack-plugin": "^2.0.0-beta.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "immutable": "^3.8.1",
     "jwt-decode": "^2.2.0",
     "lemonade-grid": "^2.1.0",
@@ -47,8 +47,8 @@
     "superagent": "^3.5.2",
     "sweetalert2": "^6.4.4",
     "validator": "^7.0.0",
-    "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
@@ -67,6 +67,8 @@
     "jest": "^19.0.2",
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.3",
-    "style-loader": "^0.13.2"
+    "style-loader": "^0.13.2",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   }
 }
