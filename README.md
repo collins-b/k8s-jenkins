@@ -23,8 +23,7 @@ Public URL: - [theHype](https://hackahype.herokuapp.com/)
 
 ### How To Run Locally
 1. Clone this repository,
-``` git clone git@github.com:Hackbit/reactriot2017-thehype.git
-```
+``` git clone git@github.com:Hackbit/reactriot2017-thehype.git ```
 2. ```cd``` to the root of cloned project.
 3. Run ```npm install``` or ```yarn``` to install required packages.
 4. Run project by initiating ``` npm start ```
