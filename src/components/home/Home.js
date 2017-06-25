@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import NewsList from '../../containers/NewsList';
 import SourceList from '../../containers/SourcesList';
 import TechList from '../../containers/TechList';
+import PoliticsList from '../../containers/PoliticsList';
 import Paper from 'material-ui/Paper';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -112,15 +113,15 @@ class HomePage extends React.Component {
                     <div className="panel-heading">
                       <div className="row">
                         <div className="col-xs-3">
-                          <i className="fa fa-thermometer fa-5x" />
+                          <i className="fa fa-users fa-5x" />
                         </div>
                         <div className="col-xs-9 text-right">
-                          <div className="huge"></div>
-                          <div>Health</div>
+                          <div className="huge">{this.props.politics.length}</div>
+                          <div>Politics</div>
                         </div>
                       </div>
                     </div>
-                    <Link href="#">
+                    <Link href="/politics">
                       <div className="panel-footer">
                         <span className="pull-left">View Details</span>
                         <span className="pull-right"><i className="fa fa-arrow-circle-right" /></span>
@@ -137,10 +138,11 @@ class HomePage extends React.Component {
         </main>
         <div className="col-md-12">
           <div style={hidden}>
-          <NewsList />
           <SourceList />
-          <TechList />
+          <NewsList />
+          <PoliticsList />
           </div>
+          <TechList />
         </div>
       </div>
       </MuiThemeProvider>
@@ -152,7 +154,8 @@ function mapStateToProps(state) {
   return {
     news: state.news,
     sources: state.sources,
-    tech: state.tech
+    tech: state.tech,
+    politics: state.politics
   };
 }
 
@@ -160,7 +163,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     news,
     sources,
-    tech
+    tech,
+    politics: state.politics
   }, dispatch);
 }
 
