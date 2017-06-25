@@ -30,7 +30,6 @@ class HomePage extends React.Component {
   textAlign: 'center',
   display: 'inline-block',
 };
-    console.log(this.props, 'propsho')
     const hidden = {
       display: 'none'
     };
