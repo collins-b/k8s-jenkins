@@ -44,6 +44,7 @@ constructor(props) {
     <CardHeader
       title={this.props.source.name}
       subtitle={this.props.source.category.capitalize()}
+      style={{ marginTop:60 }}
     />
     <CardText>
      {this.props.source.description}
@@ -53,11 +54,8 @@ constructor(props) {
       <FlatButton label="Share" />
     </CardActions>
   </Card>
-  <hr/>
   </div>
-     
-
-      </MuiThemeProvider>
+</MuiThemeProvider>
     )
   }
 }
