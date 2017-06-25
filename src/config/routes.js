@@ -4,6 +4,7 @@ import NewsLists from '../components/news/NewsDisplay';
 import NewsList from '../containers/NewsList';
 import SourceLists from '../containers/SourcesList'
 import TechList from '../containers/TechList'
+import PoliticsList from '../containers/PoliticsList'
 
 const ReactRouter = require('react-router');
 const HomePage = require('../components/home/Home');
@@ -19,6 +20,7 @@ const routes = (
      <Route path="news" component={NewsList} />
      <Route path="sources" component={SourceLists} />
      <Route path="tech" component={TechList} />
+     <Route path="politics" component={PoliticsList} />
   </Route>
  </Router>
 );
