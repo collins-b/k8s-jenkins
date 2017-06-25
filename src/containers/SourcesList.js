@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchSources } from '../actions/News';
-import SideBar from '../components/common/SideBar';
+import { fetchSources } from '../actions/Sources';
+import SourceLists from '../components/sources/Sources';
+
 export class SourceList extends Component {
   constructor(props) {
     super(props);
@@ -21,16 +22,17 @@ export class SourceList extends Component {
     if (this.props.sources.length === 0) {
       return(
         <b>No sources available</b>
-      );
+      )
     }
     return this.props.sources.map((source) => {
       return (
-        <SideBar key={source.id} source={source} />
+        <SourceLists key={source.id} source={source} />
       );
     });
   }
 
   render() {
+    console.log(this.props,'contso')
     const dispatch  = this.props
     return (
       <ul className="list-group" >

@@ -2,14 +2,24 @@ import React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import NewsList from '../../containers/NewsList';
+import SourceList from '../../containers/SourcesList';
 
 /**
  * HomePage Component
  */
 class HomePage extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      source:{
+      id: this.props.sources,
+    }
+    };
+  }
+
   render() {
-    console.log(this.props, 'props')
+    console.log(this.props.sources, 'propshome')
     const hidden = {
       display: 'none'
     };
@@ -28,7 +38,7 @@ class HomePage extends React.Component {
                           <i className="fa fa-newspaper-o fa-5x" />
                         </div>
                         <div className="col-xs-9 text-right">
-                          <div className="huge">0</div>
+                          <div className="huge">{this.props.news.length}</div>
                           <div>News Articles</div>
                         </div>
                       </div>
@@ -50,12 +60,12 @@ class HomePage extends React.Component {
                           <i className="fa fa-building-o fa-5x" />
                         </div>
                         <div className="col-xs-9 text-right">
-                          <div className="huge">0</div>
+                          <div className="huge">{this.props.sources.length}</div>
                           <div>News Sources</div>
                         </div>
                       </div>
                     </div>
-                    <Link to="/">
+                    <Link to="/sources">
                       <div className="panel-footer">
                         <span className="pull-left">View Details</span>
                         <span className="pull-right"><i className="fa fa-arrow-circle-right" /></span>
@@ -115,9 +125,10 @@ class HomePage extends React.Component {
           </div>
         </main>
         <div className="col-md-12">
-          <p style={hidden}>
+          <div style={hidden}>
           <NewsList />
-          </p>
+          <SourceList />
+          </div>
         </div>
       </div>
     );
@@ -127,12 +138,14 @@ class HomePage extends React.Component {
 function mapStateToProps(state) {
   return {
     news: state.news,
+    sources: state.sources
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     news,
+    sources
   }, dispatch);
 }
 
