@@ -26,7 +26,7 @@ class SideBar extends Component{
     <div className="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header className="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div className="mdl-layout__header-row">
-          <span className="mdl-layout-title">theHype - The Global Epicenter News Platform</span>
+          <span className="mdl-layout-title">theHype - The Global Epicenter News Platform <a href="https://www.reactriot.com/entries/247-happy-socks/vote" target="_blank">Vote Me!</a></span>
           <div className="mdl-layout-spacer" />
           <div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
           </div>
