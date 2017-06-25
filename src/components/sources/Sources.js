@@ -37,6 +37,7 @@ constructor(props) {
  * @returns {component} component
  */
   render() {
+    const share = 'http://www.facebook.com/sharer.php?u=';
     return(
       <MuiThemeProvider>
       <div className="row" style={{ marginLeft: 250,marginTop:1 }}> 
@@ -51,7 +52,7 @@ constructor(props) {
     </CardText>
     <CardActions>
       <a href={this.props.source.url} target="_blank"><FlatButton label="Visit Source" /></a>
-      <FlatButton label="Share" />
+      <a href={share+this.props.source.url}><FlatButton label="Share" /></a>
     </CardActions>
   </Card>
   </div>
