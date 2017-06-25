@@ -55,7 +55,7 @@ class HomePage extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <a href="/">
+                    <a href="/news">
                       <div className="panel-footer">
                         <span className="pull-left">View Details</span>
                         <span className="pull-right"><i className="fa fa-arrow-circle-right" /></span>
