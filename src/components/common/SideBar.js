@@ -8,25 +8,19 @@ import TextField from'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import Gravatar from 'react-gravatar';
+import SourceLists from '../../containers/SourcesList'
 
 class SideBar extends Component{
   constructor(props) {
     super(props);
     this.state = {
       source:{
-      // id: this.props.source,
-      // name: this.props.source.name,
-      // description: this.props.source.description,
-      // url: this.props.source.url,
-      // category: this.props.source.category,
-      // language: this.props.source.language,
-      // country: this.props.source.country
     }
     };
   }
   render(){
-    console.log(this.props.source,'sidebarn')
-    const email = 'dummyemail.email.com';
+    <SourceLists />
+  const email = 'dummyemail.email.com';
   return (
       <MuiThemeProvider>
     <div className="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
