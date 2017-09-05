@@ -40,6 +40,7 @@ jobs:
       - deploy:
           name: Deploy Application
           command: |
+            sudo chmod -R 777 ./deploy/staging.sh
             if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "develop" ]; then
               ./deploy/staging.sh
             fi
